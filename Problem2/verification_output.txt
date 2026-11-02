@@ -1,0 +1,214 @@
+===== Problem.pddl | satisficing =====
+$ python verify_plan.py Domain.pddl Problem.pddl planner_output.txt satisficing
+ 1. (move curiosity base sitea)  OK
+ 2. (collect-soft curiosity rock1 bay1 sitea)  OK
+ 3. (move curiosity sitea base)  OK
+ 4. (deposit curiosity rock1 bay1 base)  OK
+ 5. (move curiosity base siteb)  OK
+ 6. (collect-soft curiosity rock2 bay1 siteb)  OK
+ 7. (move curiosity siteb base)  OK
+ 8. (deposit curiosity rock2 bay1 base)  OK
+ 9. (move curiosity base sitea)  OK
+10. (move curiosity sitea sitec)  OK
+11. (move curiosity sitec sitee)  OK
+12. (pick-drill curiosity drill1 sitee)  OK
+13. (move curiosity sitee sitec)  OK
+14. (collect-hard curiosity rock3 bay1 sitec)  OK
+15. (move curiosity sitec sited)  OK
+16. (collect-soft curiosity rock4 bay2 sited)  OK
+17. (move curiosity sited siteb)  OK
+18. (move curiosity siteb base)  OK
+19. (deposit curiosity rock3 bay1 base)  OK
+20. (deposit curiosity rock4 bay2 base)  OK
+21. (move curiosity base sitea)  OK
+22. (move curiosity sitea sitec)  OK
+23. (move curiosity sitec sitee)  OK
+24. (move curiosity sitee sitef)  OK
+25. (collect-hard curiosity rock5 bay1 sitef)  OK
+26. (move curiosity sitef sitee)  OK
+27. (move curiosity sitee sitec)  OK
+28. (move curiosity sitec sitea)  OK
+29. (move curiosity sitea base)  OK
+30. (deposit curiosity rock5 bay1 base)  OK
+
+Final state:
+   (at curiosity base)
+   (empty bay1)
+   (empty bay2)
+   (has-drill curiosity)
+   (rock-at rock1 base)
+   (rock-at rock2 base)
+   (rock-at rock3 base)
+   (rock-at rock4 base)
+   (rock-at rock5 base)
+
+Goal satisfied: True
+
+===== Problem.pddl | optimal =====
+$ python verify_plan.py Domain.pddl Problem.pddl planner_output.txt optimal
+ 1. (move curiosity base siteb)  OK
+ 2. (collect-soft curiosity rock2 bay1 siteb)  OK
+ 3. (move curiosity siteb sited)  OK
+ 4. (collect-soft curiosity rock4 bay2 sited)  OK
+ 5. (move curiosity sited siteb)  OK
+ 6. (move curiosity siteb base)  OK
+ 7. (deposit curiosity rock2 bay1 base)  OK
+ 8. (deposit curiosity rock4 bay2 base)  OK
+ 9. (move curiosity base sitea)  OK
+10. (move curiosity sitea sitec)  OK
+11. (move curiosity sitec sitee)  OK
+12. (pick-drill curiosity drill1 sitee)  OK
+13. (move curiosity sitee sitef)  OK
+14. (collect-hard curiosity rock5 bay1 sitef)  OK
+15. (move curiosity sitef sitee)  OK
+16. (move curiosity sitee sitec)  OK
+17. (collect-hard curiosity rock3 bay2 sitec)  OK
+18. (move curiosity sitec sitea)  OK
+19. (move curiosity sitea base)  OK
+20. (deposit curiosity rock3 bay2 base)  OK
+21. (deposit curiosity rock5 bay1 base)  OK
+22. (move curiosity base sitea)  OK
+23. (collect-soft curiosity rock1 bay1 sitea)  OK
+24. (move curiosity sitea base)  OK
+25. (deposit curiosity rock1 bay1 base)  OK
+
+Final state:
+   (at curiosity base)
+   (empty bay1)
+   (empty bay2)
+   (has-drill curiosity)
+   (rock-at rock1 base)
+   (rock-at rock2 base)
+   (rock-at rock3 base)
+   (rock-at rock4 base)
+   (rock-at rock5 base)
+
+Goal satisfied: True
+
+===== Problem_extended.pddl | satisficing =====
+$ python verify_plan.py Domain.pddl Problem_extended.pddl planner_output.txt satisficing
+ 1. (move curiosity base sitea)  OK
+ 2. (collect-soft curiosity rock1 bay1 sitea)  OK
+ 3. (move curiosity sitea base)  OK
+ 4. (deposit curiosity rock1 bay1 base)  OK
+ 5. (move curiosity base sitea)  OK
+ 6. (move curiosity sitea sitec)  OK
+ 7. (move curiosity sitec sited)  OK
+ 8. (collect-soft curiosity rock4 bay1 sited)  OK
+ 9. (move curiosity sited sitee)  OK
+10. (pick-drill curiosity drill1 sitee)  OK
+11. (move curiosity sitee sitec)  OK
+12. (move curiosity sitec sitea)  OK
+13. (move curiosity sitea base)  OK
+14. (deposit curiosity rock4 bay1 base)  OK
+15. (move curiosity base sitea)  OK
+16. (move curiosity sitea sitec)  OK
+17. (collect-hard curiosity rock3 bay1 sitec)  OK
+18. (move curiosity sitec sitea)  OK
+19. (move curiosity sitea base)  OK
+20. (deposit curiosity rock3 bay1 base)  OK
+21. (move curiosity base sitea)  OK
+22. (move curiosity sitea sitec)  OK
+23. (move curiosity sitec sitee)  OK
+24. (collect-soft curiosity rock6 bay1 sitee)  OK
+25. (move curiosity sitee sitec)  OK
+26. (move curiosity sitec sitea)  OK
+27. (move curiosity sitea base)  OK
+28. (deposit curiosity rock6 bay1 base)  OK
+29. (move curiosity base sitea)  OK
+30. (move curiosity sitea sitec)  OK
+31. (move curiosity sitec sited)  OK
+32. (move curiosity sited siteb)  OK
+33. (collect-soft curiosity rock2 bay1 siteb)  OK
+34. (move curiosity siteb sited)  OK
+35. (move curiosity sited sitee)  OK
+36. (move curiosity sitee sitec)  OK
+37. (move curiosity sitec sitea)  OK
+38. (move curiosity sitea base)  OK
+39. (deposit curiosity rock2 bay1 base)  OK
+40. (move curiosity base sitea)  OK
+41. (move curiosity sitea sitec)  OK
+42. (move curiosity sitec sitee)  OK
+43. (move curiosity sitee sitef)  OK
+44. (collect-hard curiosity rock5 bay1 sitef)  OK
+45. (collect-hard curiosity rock7 bay2 sitef)  OK
+46. (move curiosity sitef sitee)  OK
+47. (move curiosity sitee sitec)  OK
+48. (move curiosity sitec sitea)  OK
+49. (move curiosity sitea base)  OK
+50. (deposit curiosity rock5 bay1 base)  OK
+51. (deposit curiosity rock7 bay2 base)  OK
+
+Final state:
+   (at curiosity base)
+   (empty bay1)
+   (empty bay2)
+   (has-drill curiosity)
+   (rock-at rock1 base)
+   (rock-at rock2 base)
+   (rock-at rock3 base)
+   (rock-at rock4 base)
+   (rock-at rock5 base)
+   (rock-at rock6 base)
+   (rock-at rock7 base)
+
+Goal satisfied: True
+
+===== Problem_extended.pddl | optimal =====
+$ python verify_plan.py Domain.pddl Problem_extended.pddl planner_output.txt optimal
+ 1. (move curiosity base sitea)  OK
+ 2. (move curiosity sitea sitec)  OK
+ 3. (move curiosity sitec sited)  OK
+ 4. (collect-soft curiosity rock4 bay1 sited)  OK
+ 5. (move curiosity sited siteb)  OK
+ 6. (collect-soft curiosity rock2 bay2 siteb)  OK
+ 7. (move curiosity siteb sited)  OK
+ 8. (move curiosity sited sitee)  OK
+ 9. (pick-drill curiosity drill1 sitee)  OK
+10. (move curiosity sitee sitec)  OK
+11. (move curiosity sitec sitea)  OK
+12. (move curiosity sitea base)  OK
+13. (deposit curiosity rock2 bay2 base)  OK
+14. (deposit curiosity rock4 bay1 base)  OK
+15. (move curiosity base sitea)  OK
+16. (move curiosity sitea sitec)  OK
+17. (move curiosity sitec sitee)  OK
+18. (move curiosity sitee sitef)  OK
+19. (collect-hard curiosity rock5 bay1 sitef)  OK
+20. (collect-hard curiosity rock7 bay2 sitef)  OK
+21. (move curiosity sitef sitee)  OK
+22. (move curiosity sitee sitec)  OK
+23. (move curiosity sitec sitea)  OK
+24. (move curiosity sitea base)  OK
+25. (deposit curiosity rock5 bay1 base)  OK
+26. (deposit curiosity rock7 bay2 base)  OK
+27. (move curiosity base sitea)  OK
+28. (move curiosity sitea sitec)  OK
+29. (collect-hard curiosity rock3 bay1 sitec)  OK
+30. (move curiosity sitec sitee)  OK
+31. (collect-soft curiosity rock6 bay2 sitee)  OK
+32. (move curiosity sitee sitec)  OK
+33. (move curiosity sitec sitea)  OK
+34. (move curiosity sitea base)  OK
+35. (deposit curiosity rock3 bay1 base)  OK
+36. (deposit curiosity rock6 bay2 base)  OK
+37. (move curiosity base sitea)  OK
+38. (collect-soft curiosity rock1 bay1 sitea)  OK
+39. (move curiosity sitea base)  OK
+40. (deposit curiosity rock1 bay1 base)  OK
+
+Final state:
+   (at curiosity base)
+   (empty bay1)
+   (empty bay2)
+   (has-drill curiosity)
+   (rock-at rock1 base)
+   (rock-at rock2 base)
+   (rock-at rock3 base)
+   (rock-at rock4 base)
+   (rock-at rock5 base)
+   (rock-at rock6 base)
+   (rock-at rock7 base)
+
+Goal satisfied: True
+
